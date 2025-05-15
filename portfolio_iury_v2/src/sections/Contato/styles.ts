@@ -28,6 +28,7 @@ export const ContatoContainer = styled.div`
       li {
         span {
           margin-left: 4px;
+          text-decoration: none;
         }
         a {
           transition: all 0.4s ease-in-out;
