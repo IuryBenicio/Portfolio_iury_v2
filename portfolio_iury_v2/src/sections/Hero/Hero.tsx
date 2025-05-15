@@ -13,7 +13,7 @@ import styledComponents from "../../assets/logo/styled-components-svgrepo-com.sv
 import redux from "../../assets/logo/redux-fill-svgrepo-com.svg";
 import mongoDB from "../../assets/logo/mongodb-svgrepo-com.svg";
 import nodeJs from "../../assets/logo/node-16-svgrepo-com.svg";
-import perfil from "../../assets/perfil.JPG";
+import perfil from "../../assets/perfil.png";
 
 //Swiper
 import { Swiper, SwiperSlide } from "swiper/react";
