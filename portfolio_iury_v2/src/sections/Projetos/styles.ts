@@ -11,6 +11,15 @@ export const ProjetosContainer = styled.div`
     align-items: center;
     width: 100%;
     height: 100%;
+
+    //MOBILE
+    .card-mobile {
+      img {
+        width: 100%;
+      }
+    }
+
+    //PC
     .swiper_container {
       .swiper-slide {
         width: 83%;
@@ -65,7 +74,11 @@ export const ProjetosContainer = styled.div`
     color: black;
     z-index: 4;
     cursor: pointer;
-    position: absolute;
+    position: fixed;
+    border: 1px solid white;
+    border-radius: 8px;
+    background-color: white;
+    padding-right: 8px;
     top: 50px;
     left: 50px;
     display: flex;

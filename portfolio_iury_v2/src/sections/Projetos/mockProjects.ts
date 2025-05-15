@@ -8,7 +8,7 @@ export const projects: Projects[] = [
     id: 1,
     title: "Portfólio V2.0",
     description:
-      'Meu portfólio pessoal, atualizado, com um visual maismoderno, de "página única", simulando um cartão de visitas',
+      "Versão atualizada do meu portfólio pessoal, com um layout moderno e responsivo em formato de página única, simulando um cartão de visitas digital.",
     img: Portfolio2,
     tecnologias: ["React"],
     link: "https://iurybeniciov2.vercel.app/",
@@ -17,7 +17,7 @@ export const projects: Projects[] = [
     id: 2,
     title: "MyMovies",
     description:
-      "Aplicação web com sistema de cadastro e autenticação onde vocêpode criar listar customizadas de filmes, tendo acesso a filmes do mundo inteiro",
+      "Aplicação web com sistema de autenticação e gerenciamento de listas personalizadas de filmes, com acesso a uma base de dados global de títulos.",
     img: mymovies,
     tecnologias: ["NodeJS", "MongoDB", "React"],
     link: "https://mymoovies.vercel.app/",
@@ -26,7 +26,7 @@ export const projects: Projects[] = [
     id: 3,
     title: "QrLiturgy",
     description:
-      "Aplicação feita com o intuito de mostrar a liturgia do culto de forma prática, onde temos tanto a interface para o usúario que acessara o site através de um QrCode, quanto um painel para o administrador fazer toda a customização da programação do culto",
+      "Sistema web para visualização de liturgia de cultos via QR Code, com um painel administrativo para personalização em tempo real da programação.",
     img: liturgi,
     tecnologias: ["NodeJS", "MongoDB", "React"],
     link: "https://baseigrejacristaliturgia.vercel.app/",
@@ -35,7 +35,7 @@ export const projects: Projects[] = [
     id: 4,
     title: "Efood",
     description:
-      "Simula um site com vários restaurantes e cardapios com sistema de checkout completo",
+      "Simulação de uma plataforma de delivery com listagem de restaurantes, cardápios dinâmicos e sistema completo de checkout.",
     img: Efood,
     tecnologias: ["HTML", "CSS", "JavaScript"],
     link: "https://efood-atividade.vercel.app/",

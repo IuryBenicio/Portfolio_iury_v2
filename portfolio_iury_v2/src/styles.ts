@@ -10,6 +10,10 @@ export const Draw = styled.div`
     #First-button {
       cursor: pointer;
       position: absolute;
+      @media screen and (max-width: 430px) {
+        top: 25px;
+        right: 25px;
+      }
       top: 50px;
       right: 75px;
       display: flex;
@@ -19,6 +23,10 @@ export const Draw = styled.div`
       }
     }
     #Second-button {
+      @media screen and (max-width: 430px) {
+        top: 60px;
+        right: 25px;
+      }
       cursor: pointer;
       position: absolute;
       top: 90px;
@@ -30,6 +38,10 @@ export const Draw = styled.div`
       }
     }
     #Third-button {
+      @media screen and (max-width: 430px) {
+        top: 95px;
+        right: 25px;
+      }
       cursor: pointer;
       position: absolute;
       top: 130px;

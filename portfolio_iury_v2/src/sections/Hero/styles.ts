@@ -11,6 +11,10 @@ export const HeroContainer = styled.div`
     justify-content: space-around;
     display: flex;
     align-items: center;
+    @media screen and (max-width: 430px) {
+      flex-direction: column;
+      width: 100%;
+    }
     .degrade {
       pointer-events: none;
       position: absolute;
@@ -46,6 +50,11 @@ export const HeroContainer = styled.div`
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      @media screen and (max-width: 950px) {
+        .slide-item {
+          margin: 0;
+        }
+      }
       .slide {
         margin: 40px;
         width: 100%;
@@ -60,11 +69,19 @@ export const HeroContainer = styled.div`
         }
       }
       h1 {
+        @media screen and (max-width: 430px) {
+          font-size: 30px;
+          width: 100%;
+        }
         font-weight: 300;
         font-size: 3em;
         margin-bottom: 16px;
       }
       span {
+        @media screen and (max-width: 430px) {
+          font-size: 24px;
+          color: grey;
+        }
         font-size: 2em;
         font-weight: 100;
       }

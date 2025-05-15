@@ -25,6 +25,7 @@ import "../../../node_modules/swiper/swiper.css";
 import { AnimatePresence, motion } from "framer-motion";
 
 export default function HeroSC() {
+  const { innerWidth: width } = window;
   //tecnologias
   const dataTecnologias: Tecnologias[] = [
     { id: "1", image: vue_icon },
@@ -63,8 +64,8 @@ export default function HeroSC() {
               <Swiper
                 // install Swiper modules
                 modules={[Autoplay, Navigation, Pagination, Scrollbar]}
-                spaceBetween={50}
-                slidesPerView={6}
+                spaceBetween={width < 430 ? 0 : 50}
+                slidesPerView={width < 430 ? 2 : 6}
                 navigation
                 pagination={{ clickable: true }}
                 scrollbar={{ draggable: true }}
@@ -75,7 +76,7 @@ export default function HeroSC() {
                 loop={true}
               >
                 {dataTecnologias.map((e) => (
-                  <SwiperSlide key={e.id}>
+                  <SwiperSlide className="slide-item" key={e.id}>
                     <img src={e.image} alt="" />
                   </SwiperSlide>
                 ))}
