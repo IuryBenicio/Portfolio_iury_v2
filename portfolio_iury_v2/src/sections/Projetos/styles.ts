@@ -7,200 +7,60 @@ export const ProjetosContainer = styled.div`
   position: relative;
   color: black;
   .content {
+    display: flex;
+    align-items: center;
     width: 100%;
     height: 100%;
-    background-color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    ul {
-      z-index: 2;
-      display: flex;
-      width: 100%;
-      justify-content: space-around;
-      .projeto-2 {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        margin-bottom: 207px;
-        width: 350px;
-        color: grey;
-
-        .data {
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-          text-align: center;
-          margin-bottom: 10px;
-          span {
-            font-size: 30px;
-            margin-top: 8px;
-            font-weight: 500;
-            margin-bottom: 8px;
-          }
-          img {
-            width: 100px;
-          }
-          .tecnologias {
-            margin-top: 16px;
-            ul {
-              li {
-                font-size: 30px;
-              }
+    .swiper_container {
+      .swiper-slide {
+        width: 83%;
+        border-radius: 8px;
+        .card {
+          position: relative;
+          .body {
+            .title {
+              font-size: 40px;
             }
-          }
-        }
-      }
-      .projeto-3 {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        margin-top: 299px;
-        width: 350px;
-        color: grey;
-        .data {
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-          text-align: center;
-          margin-top: 10px;
-          span {
-            font-size: 30px;
-            font-weight: 500;
-            margin-bottom: 8px;
-          }
-          img {
-            width: 110px;
-            background-color: grey;
+            p {
+              padding: 0;
+              margin: 0;
+              font-size: 22px;
+            }
+            .tecnologias {
+              font-size: 70px;
+            }
+            text-align: center;
+            padding: 100px;
+            opacity: 0;
+            position: absolute;
+            width: 100%;
+            height: 100%;
             border-radius: 8px;
+            top: 0;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.9);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            transition: all 0.4s ease-in-out;
           }
-          .tecnologias {
-            margin-top: 16px;
-            ul {
-              li {
-                font-size: 30px;
-              }
+          &:hover {
+            .body {
+              opacity: 1;
             }
-          }
-        }
-      }
-      .projeto-4 {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        margin-bottom: 337px;
-        width: 350px;
-        color: grey;
-        .data {
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-          text-align: center;
-          margin-bottom: 10px;
-          span {
-            font-size: 30px;
-            font-weight: 500;
-            margin-bottom: 8px;
           }
           img {
-            width: 350px;
-          }
-          .tecnologias {
-            margin-top: 16px;
-            ul {
-              li {
-                font-size: 30px;
-              }
-            }
+            width: 100%;
+            border-radius: 2px;
+            object-fit: cover;
+            height: 100%;
           }
         }
       }
-      .projeto-1 {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        margin-top: 239px;
-        width: 350px;
-        color: grey;
-        .data {
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-          text-align: center;
-          margin-top: 10px;
-          span {
-            font-size: 30px;
-            font-weight: 500;
-            margin-top: 4px;
-          }
-          img {
-            width: 200px;
-            border-radius: 8px;
-          }
-          .tecnologias {
-            margin-top: 16px;
-            ul {
-              li {
-                font-size: 30px;
-              }
-            }
-          }
-        }
-      }
-      .projeto-5 {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        margin-top: 231px;
-        width: 350px;
-        color: grey;
-        .data {
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-          text-align: center;
-          margin-top: 10px;
-          span {
-            font-size: 30px;
-            font-weight: 500;
-            margin-top: 4px;
-          }
-          img {
-            width: 350px;
-            border-radius: 8px;
-          }
-          .tecnologias {
-            margin-top: 16px;
-            ul {
-              li {
-                font-size: 30px;
-              }
-            }
-          }
-        }
-      }
-    }
-    hr {
-      top: 49.7%;
-      position: absolute;
-      width: 98%;
-      height: 3px;
-      background-color: black;
     }
   }
-
   .buttons {
     color: black;
     z-index: 4;
