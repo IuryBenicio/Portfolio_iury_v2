@@ -23,18 +23,19 @@ export default function ProjetosSC({ onBack }: Props) {
   const { innerWidth: width } = window;
 
   function retornaTec(e: string) {
-    if (e === "React") {
-      return <FaReact />;
-    } else if (e === "HTML") {
-      return <FaHtml5 />;
-    } else if (e === "NodeJS") {
-      return <FaNodeJs />;
-    } else if (e === "MongoDB") {
-      return <DiMongodb />;
-    } else if (e === "JavaScript") {
-      return <IoLogoJavascript />;
-    } else if (e === "CSS") {
-      return <FaCss3Alt />;
+    switch (e) {
+      case "React":
+        return <FaReact />;
+      case "HMTL":
+        return <FaHtml5 />;
+      case "NodeJS":
+        return <FaNodeJs />;
+      case "MongoDB":
+        return <DiMongodb />;
+      case "JavaScript":
+        return <IoLogoJavascript />;
+      case "CSS":
+        return <FaCss3Alt />;
     }
   }
 
