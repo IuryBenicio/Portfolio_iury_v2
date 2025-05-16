@@ -6,16 +6,29 @@ export const ProjetosContainer = styled.div`
   overflow: hidden;
   position: relative;
   color: black;
+  @media screen and (max-width: 450px) {
+    overflow: scroll;
+    .buttons {
+      position: fixed;
+    }
+  }
   .content {
     display: flex;
     align-items: center;
     width: 100%;
     height: 100%;
+    @media screen and (max-width: 450px) {
+      display: flex;
+      flex-direction: column;
+      height: auto;
+    }
 
-    //MOBILE
-    .card-mobile {
-      img {
-        width: 100%;
+    .div-mobile {
+      padding: 16px;
+      .motion-div {
+        &:not(:last-child) {
+        }
+        margin-bottom: 16px;
       }
     }
 
@@ -75,10 +88,34 @@ export const ProjetosContainer = styled.div`
     z-index: 4;
     cursor: pointer;
     position: fixed;
-    border: 1px solid white;
-    border-radius: 8px;
-    background-color: white;
-    padding-right: 8px;
+    @media screen and (max-width: 450px) {
+      padding-right: 8px;
+      top: 25px;
+      left: 25px;
+      background: #ffffff;
+      background: -webkit-linear-gradient(
+        270deg,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 1) 35%,
+        rgba(255, 255, 255, 1) 65%,
+        rgba(255, 255, 255, 0) 100%
+      );
+      background: -moz-linear-gradient(
+        270deg,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 1) 35%,
+        rgba(255, 255, 255, 1) 65%,
+        rgba(255, 255, 255, 0) 100%
+      );
+      background: linear-gradient(
+        270deg,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 1) 35%,
+        rgba(255, 255, 255, 1) 65%,
+        rgba(255, 255, 255, 0) 100%
+      );
+      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#FFFFFF", endColorstr="#FFFFFF", GradientType=0);
+    }
     top: 50px;
     left: 50px;
     display: flex;

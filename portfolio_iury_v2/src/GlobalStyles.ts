@@ -8,8 +8,12 @@ export const GlobalStyles = createGlobalStyle`
         font-family: "Quicksand", sans-serif;
         text-decoration: none;
         list-style: none;
+        ul{
+          padding: 0;
+        }
         a{
             color: black;
+            text-decoration: none;
         }
         &::-webkit-scrollbar { 
             display: none;

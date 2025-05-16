@@ -16,6 +16,9 @@ export const FormacoesContainer = styled.div`
     align-items: center;
     border: 1px solid black;
     border-radius: 8px;
+    @media screen and (max-width: 450px) {
+      width: 95%;
+    }
     .header {
       display: flex;
       margin: 0 auto;
@@ -41,17 +44,35 @@ export const FormacoesContainer = styled.div`
     .body {
       padding: 16px;
       padding-top: 8;
+      @media screen and (max-width: 450px) {
+        padding: 4px;
+      }
       .sobre-div {
+        @media screen and (max-width: 450px) {
+          font-size: 20px;
+          padding: 8px;
+          margin: 0;
+          span {
+            font-size: 16px;
+          }
+        }
         font-size: 26px;
         text-align: center;
         font-weight: 100;
         color: grey;
         padding: 16px;
         span {
+          @media screen and (max-width: 450px) {
+            font-size: 16px;
+            font-weight: 500;
+            color: rgba(0, 0, 0, 0.4);
+            padding: 16px;
+          }
           font-size: 20px;
         }
       }
       .formacao-div {
+        padding: 0;
         .formacoes-item {
           &:not(:first-child) {
             margin-top: 16px;
@@ -72,6 +93,12 @@ export const FormacoesContainer = styled.div`
           }
         }
       }
+    }
+  }
+  .buttons {
+    @media screen and (max-width: 450px) {
+      top: 25px;
+      left: 25px;
     }
   }
 `;

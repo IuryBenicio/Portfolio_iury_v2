@@ -21,6 +21,12 @@ export const ContatoContainer = styled.div`
   align-items: center;
   display: flex;
   flex-direction: column;
+  .buttons {
+    @media screen and (max-width: 450px) {
+      left: 25px;
+      top: 25px;
+    }
+  }
   .redes-sociais {
     margin-top: 16px;
     ul {
@@ -46,6 +52,9 @@ export const ContatoContainer = styled.div`
   }
 
   form {
+    @media screen and (max-width: 450px) {
+      width: 90%;
+    }
     padding: 40px;
     width: 50%;
     border: solid 1px rgba(0, 0, 0, 0.1);

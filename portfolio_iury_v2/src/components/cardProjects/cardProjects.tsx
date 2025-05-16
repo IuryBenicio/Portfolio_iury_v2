@@ -1,19 +1,33 @@
 import { CardContainer } from "./styles";
 
-export default function CardProjectCM() {
+type props = {
+  project: Projects;
+};
+
+export default function CardProjectCM({ project }: props) {
+  function returnDescription(description: string) {
+    if (description.length > 250) {
+      return description.slice(0, 250) + " ...";
+    }
+    return description;
+  }
+
   return (
     <CardContainer>
       <div className="image-div">
-        <img src="https://placehold.co/1000x1000" alt="" />
+        <img src={project.img} alt="" />
       </div>
       <div className="text">
-        <span>NOME</span>
-        <p>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Architecto,
-          sapiente pariatur vel quae voluptate delectus ipsam possimus veniam
-          nulla, saepe culpa rem! Voluptatem, illo mollitia obcaecati
-          exercitationem totam itaque voluptas!
-        </p>
+        <span>{project.title}</span>
+        <p>{returnDescription(project.description)}</p>
+        <a
+          href={project.link}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="btn btn-outline-secondary mb-4"
+        >
+          acessar aplicação
+        </a>
       </div>
     </CardContainer>
   );

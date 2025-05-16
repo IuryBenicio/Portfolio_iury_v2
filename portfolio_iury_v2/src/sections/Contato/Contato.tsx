@@ -13,7 +13,7 @@ import { useEffect, useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 
 //motion
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, easeInOut, motion } from "framer-motion";
 
 type Props = {
   onBack: () => void;
@@ -68,10 +68,20 @@ export default function ContatoSC({ onBack }: Props) {
 
   return (
     <ContatoContainer>
-      <a onClick={onBack} className="buttons" href="#">
-        <IoIosArrowBack />
-        <span>voltar</span>
-      </a>
+      <AnimatePresence>
+        <motion.a
+          initial={{ x: -100, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          exit={{ x: 100, opacity: 0 }}
+          transition={{ delay: 0.6, duration: 0.8, ease: easeInOut }}
+          onClick={onBack}
+          className="buttons"
+          href="#"
+        >
+          <IoIosArrowBack />
+          <span>voltar</span>
+        </motion.a>
+      </AnimatePresence>
       <AnimatePresence>
         <motion.form
           initial={{ opacity: 0 }}
