@@ -11,7 +11,7 @@ export const projects: Projects[] = [
       "Versão atualizada do meu portfólio pessoal, com um layout moderno e responsivo em formato de página única, simulando um cartão de visitas digital.",
     img: Portfolio2,
     tecnologias: ["React"],
-    link: "https://iurybeniciov2.vercel.app/",
+    link: "https://iurybenicio.vercel.app/",
   },
   {
     id: 2,
