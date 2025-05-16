@@ -1,6 +1,6 @@
 # Portfólio | Iury Benicio
 
-Este é o repositório do meu portfólio pessoal, desenvolvido com foco em apresentar minha trajetória como **Desenvolvedor Full Stack**, minhas habilidades técnicas e projetos mais relevantes.
+Este é o repositório do meu portfólio pessoal, desenvolvido com foco em apresentar minhas habilidades técnicas e projetos mais relevantes.
 
 Acesse online: [iurybenicio.vercel.app](https://iurybenicio.vercel.app)
 
