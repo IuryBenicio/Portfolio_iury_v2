@@ -2,9 +2,10 @@ import { CardContainer } from "./styles";
 
 type props = {
   project: Projects;
+  language: string;
 };
 
-export default function CardProjectCM({ project }: props) {
+export default function CardProjectCM({ project, language }: props) {
   function returnDescription(description: string) {
     if (description.length > 250) {
       return description.slice(0, 250) + " ...";
@@ -18,8 +19,12 @@ export default function CardProjectCM({ project }: props) {
         <img src={project.img} alt="" />
       </div>
       <div className="text">
-        <span>{project.title}</span>
-        <p>{returnDescription(project.description)}</p>
+        <span>{project.title_pt}</span>
+        {language === "Portuguese" ? (
+          <p>{returnDescription(project.description_pt)}</p>
+        ) : (
+          <p>{returnDescription(project.description_eng)}</p>
+        )}
         <a
           href={project.link}
           target="_blank"

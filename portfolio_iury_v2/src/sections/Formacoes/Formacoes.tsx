@@ -5,13 +5,14 @@ import { AnimatePresence, easeInOut, motion } from "framer-motion";
 
 type Props = {
   onBack: () => void;
+  language?: string;
 };
 
 type textState = {
   type: "formação" | "sobre-mim";
 };
 
-export default function FormacoesSC({ onBack }: Props) {
+export default function FormacoesSC({ language, onBack }: Props) {
   const [text, setText] = useState<textState>({
     type: "sobre-mim",
   });
@@ -19,7 +20,7 @@ export default function FormacoesSC({ onBack }: Props) {
     <FormacoesContainer>
       <a onClick={onBack} className="buttons" href="#">
         <IoIosArrowBack />
-        <span>voltar</span>
+        <span>{language === "Portuguese" ? "voltar" : "Back"}</span>
       </a>
       <AnimatePresence>
         <motion.div
@@ -38,7 +39,7 @@ export default function FormacoesSC({ onBack }: Props) {
                 transition={{ ease: easeInOut, duration: 0.5, delay: 0.8 }}
                 onClick={() => setText({ type: "sobre-mim" })}
               >
-                Sobre mim
+                {language === "Portuguese" ? "Sobre mim" : "About me"}
               </motion.li>
             </AnimatePresence>
             <AnimatePresence>
@@ -49,7 +50,7 @@ export default function FormacoesSC({ onBack }: Props) {
                 transition={{ ease: easeInOut, duration: 0.5, delay: 1 }}
                 onClick={() => setText({ type: "formação" })}
               >
-                Formações
+                {language === "Portuguese" ? "Formações" : "Qualifications"}
               </motion.li>
             </AnimatePresence>
           </ul>
@@ -65,14 +66,9 @@ export default function FormacoesSC({ onBack }: Props) {
               >
                 {text.type === "sobre-mim" ? (
                   <p className="sobre-div">
-                    Olá. Sou o Iury Benicio, tenho 24 anos e sou um
-                    desenvolvedor web full-stack com foco em projetos modernos
-                    utilizando tecnologias como React, Vue.js, Node.js e
-                    TypeScript. Em formação contínua em Engenharia de Software
-                    (Unicesumar) e cursos complementares. Perfil comunicativo,
-                    proativo e colaborativo, com sólida base em front-end,
-                    back-end e integração entre ambos. Busco sempre soluções
-                    eficientes e bem estruturadas.
+                    {language === "Portuguese"
+                      ? "Olá. Sou o Iury Benicio, tenho 24 anos e sou um desenvolvedor web full-stack com foco em projetos modernos utilizando tecnologias como React, Vue.js, Node.js e TypeScript. Em formação contínua em Engenharia de Software (Unicesumar) e cursos complementares. Perfil comunicativo, proativo e colaborativo, com sólida base em front-end, back-end e integração entre ambos. Busco sempre soluções eficientes e bem estruturadas."
+                      : "Hello. I'm Iury Benicio, I'm 24 years full-stack web developer focused on modern projects using technologies like React, Vue.js, Node.js, and TypeScript. I'm currently pursuing a degree in Software Engineering (Unicesumar) and taking complementary courses. I have a communicative, proactive, and collaborative profile, with a solid foundation in front-end, back-end, and the integration between both. I'm always looking for efficient and well-structured solutions."}
                     <br />
                     <br />
                     <AnimatePresence>
@@ -82,7 +78,9 @@ export default function FormacoesSC({ onBack }: Props) {
                         exit={{ opacity: 0 }}
                         transition={{ delay: 1.5 }}
                       >
-                        Atualmente estou estudando: Java, Docker, Spring e SQL
+                        {language === "Portuguese"
+                          ? "Atualmente estou estudando: Java, Docker, Spring e SQL"
+                          : "I’m currently studying: Java, Docker, Spring, and SQL"}
                       </motion.span>
                     </AnimatePresence>
                   </p>
@@ -90,8 +88,16 @@ export default function FormacoesSC({ onBack }: Props) {
                   <ul className="formacao-div">
                     <li className="formacoes-item">
                       <span className="instuicao">Unicesumar</span>
-                      <p className="curso">Engenharia de software</p>
-                      <p className="progresso">em andamento</p>
+                      <p className="curso">
+                        {language === "Portuguese"
+                          ? "Engenharia de software"
+                          : "software engineer"}
+                      </p>
+                      <p className="progresso">
+                        {language === "Portuguese"
+                          ? "em andamento"
+                          : "in progress"}
+                      </p>
                     </li>
                     {/* <li className="formacoes-item">
                     <span className="instuicao">EBAC</span>

@@ -9,21 +9,30 @@ import FormacoesSC from "./sections/Formacoes/Formacoes";
 import ContatoSC from "./sections/Contato/Contato";
 
 function App() {
+  const [language, setLanguage] = useState("Portuguese");
+
   const [buttons, setButtons] = useState({
-    buttons: ["Projetos", "Formalções", "Contato"],
+    buttons:
+      language === "Portuguese"
+        ? ["Projetos", "Formações", "Contato"]
+        : ["Projects", "About-me", "Contact me"],
     active: false,
   });
+
+  function changeLanguage(language: string) {
+    setLanguage(language);
+  }
 
   const [activePage, setActivePage] = useState("initial"); // ou "projetos", "tecnologias", "contato"
 
   function handleBackToMenu() {
-    setActivePage("none"); // desmonta o atual primeiro
+    setActivePage("none"); // desmonta a página primeiro
     setTimeout(() => {
       setButtons((prev) => ({ ...prev, active: true }));
     }, 600);
     setTimeout(() => {
       setActivePage("menu");
-    }, 500); // tempo da animação de saída (de ProjetosPage, etc.)
+    }, 500); // tempo da animação de saída
   }
 
   return (
@@ -39,15 +48,13 @@ function App() {
             className="buttons-menu"
           >
             <a id="First-button" onClick={() => setActivePage("projetos")}>
-              Projetos <IoIosArrowForward />
+              {buttons.buttons[0]} <IoIosArrowForward />
             </a>
             <a id="Second-button" onClick={() => setActivePage("formações")}>
-              Sobre mim
-              <IoIosArrowForward />
+              {buttons.buttons[1]} <IoIosArrowForward />
             </a>
             <a id="Third-button" onClick={() => setActivePage("contato")}>
-              Contato
-              <IoIosArrowForward />
+              {buttons.buttons[2]} <IoIosArrowForward />
             </a>
           </motion.div>
         )}
@@ -61,7 +68,7 @@ function App() {
             exit={{ opacity: 0, x: -100 }}
             transition={{ duration: 0.5 }}
           >
-            <ProjetosSC onBack={handleBackToMenu} />
+            <ProjetosSC language={language} onBack={handleBackToMenu} />
           </motion.div>
         )}
       </AnimatePresence>
@@ -75,7 +82,7 @@ function App() {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="menu"
           >
-            <HeroSC />
+            <HeroSC language={language} />
           </motion.div>
         )}
       </AnimatePresence>
@@ -88,7 +95,7 @@ function App() {
             exit={{ opacity: 0, x: 100 }}
             transition={{ duration: 0.5 }}
           >
-            <FormacoesSC onBack={handleBackToMenu} />
+            <FormacoesSC language={language} onBack={handleBackToMenu} />
           </motion.div>
         )}
       </AnimatePresence>
@@ -101,7 +108,7 @@ function App() {
             exit={{ opacity: 0, x: -100 }}
             transition={{ duration: 0.5 }}
           >
-            <ContatoSC onBack={handleBackToMenu} />
+            <ContatoSC language={language} onBack={handleBackToMenu} />
           </motion.div>
         )}
       </AnimatePresence>
@@ -114,7 +121,11 @@ function App() {
           transition={{ duration: 1.7, delay: 0.2, ease: easeInOut }}
           className="initial"
         >
-          <InitialPage onBack={handleBackToMenu} />
+          <InitialPage
+            setLanguage={(a: string) => changeLanguage(a)}
+            language={language}
+            onBack={handleBackToMenu}
+          />
         </motion.div>
       </AnimatePresence>
     </Draw>

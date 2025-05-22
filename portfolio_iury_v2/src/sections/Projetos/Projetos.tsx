@@ -15,11 +15,10 @@ import { AnimatePresence, easeInOut, motion } from "framer-motion";
 
 type Props = {
   onBack: () => void;
+  language: string;
 };
 
-export default function ProjetosSC({ onBack }: Props) {
-  // const [hover, setHover] = useState();
-
+export default function ProjetosSC({ onBack, language }: Props) {
   const { innerWidth: width } = window;
 
   function retornaTec(e: string) {
@@ -59,7 +58,7 @@ export default function ProjetosSC({ onBack }: Props) {
           className="buttons"
         >
           <IoIosArrowBack />
-          <span>voltar</span>
+          <span>{language === "Portuguese" ? "voltar" : "back"}</span>
         </motion.a>
       </AnimatePresence>
       <div className="content">
@@ -77,7 +76,7 @@ export default function ProjetosSC({ onBack }: Props) {
                   }}
                   className="motion-div"
                 >
-                  <CardProjectCM project={e} />
+                  <CardProjectCM language={language} project={e} />
                 </motion.div>
               </AnimatePresence>
             ))}
@@ -112,8 +111,12 @@ export default function ProjetosSC({ onBack }: Props) {
                     <img src={e.img} />
                   </div>
                   <div className="body">
-                    <span className="title">{e.title}</span>
-                    <p>{e.description}</p>
+                    <span className="title">{e.title_pt}</span>
+                    {language === "Portuguese" ? (
+                      <p>{e.description_pt}</p>
+                    ) : (
+                      <p>{e.description_eng}</p>
+                    )}
                     <div className="tecnologias">
                       {e.tecnologias.map((e) => retornaTec(e))}
                     </div>

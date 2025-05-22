@@ -5,8 +5,9 @@ type Tecnologias = {
 
 type Projects = {
   id: number;
-  title: string;
-  description: string;
+  title_pt: string;
+  description_pt: string;
+  description_eng: string;
   img: string;
   tecnologias: string[];
   link: string;

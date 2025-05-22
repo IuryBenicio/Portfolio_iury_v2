@@ -17,8 +17,9 @@ import { AnimatePresence, easeInOut, motion } from "framer-motion";
 
 type Props = {
   onBack: () => void;
+  language?: string;
 };
-export default function ContatoSC({ onBack }: Props) {
+export default function ContatoSC({ onBack, language }: Props) {
   const [buttonSend, setButtonSend] = useState(false);
   const form = useRef<HTMLFormElement>(null);
   const [formState, setFormState] = useState({
@@ -91,9 +92,15 @@ export default function ContatoSC({ onBack }: Props) {
           ref={form}
           onSubmit={(e) => sendEmail(e)}
         >
-          <span className="title">Entre em contato comigo</span>
+          <span className="title">
+            {language === "Portuguese"
+              ? "Entre em contato comigo"
+              : "Contact me"}
+          </span>
           <label htmlFor="nomeInpt">
-            <span>Digite o seu nome</span>
+            <span>
+              {language === "Portugues" ? "Digite o seu nome" : "Your name:"}
+            </span>
             <input
               name="from_name"
               id="nomeInpt"
@@ -105,7 +112,9 @@ export default function ContatoSC({ onBack }: Props) {
             />
           </label>
           <label htmlFor="emailInpt">
-            <span>Digite o seu email</span>
+            <span>
+              {language === "Portugues" ? "Digite o seu email" : "Email"}
+            </span>
             <input
               name="from_email"
               id="emailInpt"
@@ -117,7 +126,9 @@ export default function ContatoSC({ onBack }: Props) {
             />
           </label>
           <label htmlFor="msgInpt">
-            <span>Digite sua mensagem</span>
+            <span>
+              {language === "Portuguese" ? "Digite sua mensagem" : "Message"}
+            </span>
             <textarea
               name="message"
               id="msgInpt"
@@ -131,7 +142,7 @@ export default function ContatoSC({ onBack }: Props) {
             className={buttonSend ? "btn-submit-on" : "btn-submit-off"}
             disabled={!buttonSend}
           >
-            Enviar
+            {language === "Portuguese" ? "Enviar" : "Submit"}
           </button>
         </motion.form>
         <div className="redes-sociais">

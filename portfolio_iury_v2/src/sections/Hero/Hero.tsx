@@ -24,7 +24,11 @@ import "../../../node_modules/swiper/swiper.css";
 //Framer
 import { AnimatePresence, motion } from "framer-motion";
 
-export default function HeroSC() {
+type props = {
+  language: string;
+};
+
+export default function HeroSC({ language }: props) {
   const { innerWidth: width } = window;
   //tecnologias
   const dataTecnologias: Tecnologias[] = [
@@ -49,8 +53,17 @@ export default function HeroSC() {
           <img src={perfil} />
         </div>
         <div className="text">
-          <h1>Meu nome é Iury Benicio</h1>
-          <span>e esse é o meu portfólio</span>
+          {language === "Portuguese" ? (
+            <>
+              <h1>Meu nome é Iury Benicio</h1>
+              <span>e esse é o meu portfólio</span>
+            </>
+          ) : (
+            <>
+              <h1>I am Iury Benicio</h1>
+              <span>and this is my portfolio</span>
+            </>
+          )}
           <AnimatePresence mode="wait">
             <motion.div
               className="slide"
