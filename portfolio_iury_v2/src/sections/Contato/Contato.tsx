@@ -80,7 +80,7 @@ export default function ContatoSC({ onBack, language }: Props) {
           href="#"
         >
           <IoIosArrowBack />
-          <span>voltar</span>
+          <span>{language === "Portuguese" ? "voltar" : "back"}</span>
         </motion.a>
       </AnimatePresence>
       <AnimatePresence>

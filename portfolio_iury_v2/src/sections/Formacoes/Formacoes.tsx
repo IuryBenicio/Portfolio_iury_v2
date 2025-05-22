@@ -18,10 +18,20 @@ export default function FormacoesSC({ language, onBack }: Props) {
   });
   return (
     <FormacoesContainer>
-      <a onClick={onBack} className="buttons" href="#">
-        <IoIosArrowBack />
-        <span>{language === "Portuguese" ? "voltar" : "Back"}</span>
-      </a>
+      <AnimatePresence>
+        <motion.a
+          initial={{ x: -100, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          exit={{ x: 100, opacity: 0 }}
+          transition={{ delay: 0.6, duration: 0.8, ease: easeInOut }}
+          onClick={onBack}
+          className="buttons"
+          href="#"
+        >
+          <IoIosArrowBack />
+          <span>{language === "Portuguese" ? "voltar" : "back"}</span>
+        </motion.a>
+      </AnimatePresence>
       <AnimatePresence>
         <motion.div
           initial={{ opacity: 0 }}

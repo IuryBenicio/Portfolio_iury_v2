@@ -12,10 +12,6 @@ function App() {
   const [language, setLanguage] = useState("Portuguese");
 
   const [buttons, setButtons] = useState({
-    buttons:
-      language === "Portuguese"
-        ? ["Projetos", "Formações", "Contato"]
-        : ["Projects", "About-me", "Contact me"],
     active: false,
   });
 
@@ -48,13 +44,16 @@ function App() {
             className="buttons-menu"
           >
             <a id="First-button" onClick={() => setActivePage("projetos")}>
-              {buttons.buttons[0]} <IoIosArrowForward />
+              {language === "Portuguese" ? "Projetos" : "Projects"}
+              <IoIosArrowForward />
             </a>
             <a id="Second-button" onClick={() => setActivePage("formações")}>
-              {buttons.buttons[1]} <IoIosArrowForward />
+              {language === "Portuguese" ? "Sobre mim" : "About me"}
+              <IoIosArrowForward />
             </a>
             <a id="Third-button" onClick={() => setActivePage("contato")}>
-              {buttons.buttons[2]} <IoIosArrowForward />
+              {language === "Portuguese" ? "Fale comigo" : "Contact me"}
+              <IoIosArrowForward />
             </a>
           </motion.div>
         )}
